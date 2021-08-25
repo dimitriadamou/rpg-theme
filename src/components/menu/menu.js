@@ -20,25 +20,16 @@ function Menu({className, children, ...props}) {
 
 
 const StyledMenu = styled(Menu).attrs(props => ({
-    width: props.width || "100%"
+    width: props.width || "100%",
+    height: props.height || "100%",
 }))`
     border: 1px solid #cfcfcf;
-    box-shadow: 1px 1px #c5c5c5,
-        -1px -1px #c5c5c5,
-        -1px 1px #c5c5c5,
-        1px -1px #c5c5c5,
-        2px 2px #818181,
-        -2px -2px #818181,
-        -2px 2px #818181,
-        2px -2px #818181,
-        0px 3px #727272,
-        -3px -3px #727272,
-        -3px 3px #727272,
-        3px -3px #727272;
+    box-shadow: ${props => props.theme.normalBackground.boxShadow};
     border-radius: 5px;
     padding: 5px;
     background: ${props => props.theme.normalBackground.background};
     width: ${props => props.width};
+    height: ${props => props.height};
     font-family: Verdana, sans-serif;
     font-size: 20px;
     font-weight: normal;
