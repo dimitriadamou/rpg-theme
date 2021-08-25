@@ -1,25 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const HorizontalBorder = styled.div`
-    box-sizing: content-box;
-    border-image: ${props => props.theme.normalBackground.borderVerticalBackground};
-    border-image-repeat: stretch;
-    border-style: solid;
-    border-width: ${props => props.theme.normalBackground.borderWidth};
-    border-top: none;
-    border-bottom: none;
-    margin-top: -2px;
-    padding-top: 2px;
-    margin-bottom: -2px;
-    padding-bottom: 2px;
-    
-                
-    margin-left: -${props => props.theme.normalBackground.borderWidth};
-    margin-right: -4px;
-    height: 100%;
-`;
-
 function Menu({className, children, ...props}) {
     return (
         <div className={className}>
