@@ -1,9 +1,12 @@
+import { createGlobalStyle } from 'styled-components';
+
+const globalStyle = createGlobalStyle`
+
+`;
+
 const theme = {
+    globalStyle,
     background: {
-        primary: "",
-        secondary: ""
-    },
-    normalBackground: {
         primaryColor: "#fff",
         boxShadow: `1px 1px #c5c5c5,
                     -1px -1px #c5c5c5,
@@ -17,9 +20,15 @@ const theme = {
                     -3px -3px #727272,
                     -3px 3px #727272,
                     3px -3px #727272`,
-        background: "linear-gradient(135deg, #0000a5, #000026)",
+        background: `
+        linear-gradient(135deg, #0000ffaa, #000022aa 70.71%),
+        linear-gradient(45deg, #0053b1ff, #000022 70.71%),
+        linear-gradient(0deg, #0053ff, #000022 70.71%)
+        `,
         borderWidth: "5px",
     }
 }
+
+export { globalStyle }
 
 export default theme;
