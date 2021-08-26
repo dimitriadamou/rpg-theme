@@ -5,10 +5,19 @@ import { ThemeProvider } from 'styled-components';
 import { addDecorator } from '@storybook/react';
 import { withThemes } from '@react-theming/storybook-addon';
 
-import theme from '../src/theme/theme';
+import ff7Theme from '../src/theme/ff7';
 
 // pass ThemeProvider and array of your themes to decorator
-addDecorator(withThemes(ThemeProvider, [theme]));
+addDecorator(withThemes(ThemeProvider, [ff7Theme]));
+
+export const decorators = [
+  (Story) => (
+    <>
+      <ff7Theme.globalStyle />
+      <Story />
+    </>
+  )
+];
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
