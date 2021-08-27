@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const zoom = 3;
+const zoom = 2.3;
 
 const SpritesheetWidth = () => 244 * zoom;
 const SpritesheetHeight = () => 157 * zoom;
@@ -51,6 +51,7 @@ const StyledCharacterIcon = styled(Component).attrs(props => ({
     height: ${CSSSpriteHeight()};
     background: url('./resources/ff7/img/portraits.png') no-repeat 0px 0px / ${CSSSpritesheetWidth()} ${CSSSpritesheetHeight()};
     background-position: ${props => CharacterSpritesheet[props.character].backgroundPosition};
+    transform: scaleX(0.9);
 `;
 
 export default StyledCharacterIcon

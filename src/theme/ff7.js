@@ -28,12 +28,12 @@ const globalStyle = createGlobalStyle`
             font-family: "Reactor7", "Verdana";
             font-size: 16px;
             text-shadow:    0px 2px #222,
-                           2px 1px #222;
+                            2px 1px #222;
             // CSS you want global. 
         }
         
         .ff7-font-stretch {
-            transform: scal(1.1, 1.0);
+            transform: scal(1.2, 0.85);
         }
     `;
 

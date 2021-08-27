@@ -11,7 +11,6 @@ import Typography from '../typography/typography';
 */
 
 const Name = styled.div`
-    font-size: 4rem;
     color: ${props => props.theme.background.primaryColor};
 `
 
@@ -20,6 +19,24 @@ const Component = ({name, level, maxHP, currentHP, maxMP, currentMP}) => {
         <Name>
             <Typography>{name}</Typography>
         </Name>
+        <div>
+            <Typography>
+                LV                
+            </Typography>
+            <Typography>
+                {level}                
+            </Typography>
+        </div>
+        <div>
+            <Typography>
+                HP                
+            </Typography>
+        </div>
+        <div>
+            <Typography>
+                MP         
+            </Typography>
+        </div>
     </div>)
 }
 

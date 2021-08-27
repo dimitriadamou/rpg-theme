@@ -21,9 +21,9 @@ const theme = {
                     -3px 3px #727272,
                     3px -3px #727272`,
         background: `
-        linear-gradient(135deg, #0000ffaa, #000022aa 70.71%),
-        linear-gradient(45deg, #0053b1ff, #000022 70.71%),
-        linear-gradient(0deg, #0053ff, #000022 70.71%)
+        linear-gradient(135deg, #0054b2, #000022 100.71%),
+        linear-gradient(45deg, #0053b1, #000022 50.71%),
+        linear-gradient(0deg, #0053ff, #000022 100.71%)
         `,
         borderWidth: "5px",
     }

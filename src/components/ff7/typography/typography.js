@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Component = ({as="span", children, className, ...props}) => {
+const Component = ({as="span", children, style, className, ...props}) => {
     const Element = as || "span";
 
 
     return (
-        <Element className={className}>
+        <Element className={className} style={style}>
             {children}
         </Element>
     )
@@ -25,11 +25,15 @@ const getPropSize = (size) => {
 
 const StyledComponent = styled(Component).attrs(
     props => ({
-        stretch: props.stretch ? "" : "transform: scale(0.7, 1.0);",
-        size: props.size ? getPropSize(props.size) : "2rem"
+        stretch: props.stretch ? "" : "transform: scale(1, 1.4);",
+        size: props.size ? getPropSize(props.size) : "1.5rem",
+        color: props.theme.background.primaryColor
     })
 )`
     font-size: ${props => props.size};
+    display: inline-block;
+    font-color: ${props => props.color};
+    line-height: 2rem;
     ${props => props.stretch}
 `;
 
