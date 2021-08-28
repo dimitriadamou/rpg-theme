@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const zoom = 2.3;
+import Grid from '../layout/grid';
+
+const zoom = 2.5;
 
 const SpritesheetWidth = () => 244 * zoom;
 const SpritesheetHeight = () => 157 * zoom;
@@ -23,10 +25,10 @@ const CSSSpriteWidth = () => SpriteWidth() + "px";
 const CSSSpriteHeight = () => SpriteHeight() + "px";
 
 
-const Component = ({className, ...props}) => {
-    return (<div style={{'gridArea': 'icon'}}>
+const Component = ({className, row = "front", ...props}) => {
+    return (<Grid area="icon" justify={row === "front" ? "start" : "end"}>
         <div className={className} />
-    </div>)
+    </Grid>)
 }
 
 
@@ -39,6 +41,9 @@ const CharacterSpritesheet = {
     },
     'barret': {
         'backgroundPosition': `${CSSSpriteXOffset(3)} ${CSSSpriteYOffset(0)}` //3 left, 0 top.
+    },
+    'tifa': {
+        'backgroundPosition': `${CSSSpriteXOffset(4)} ${CSSSpriteYOffset(0)}` //4 left, 0 top.
     }
 }
 
@@ -52,6 +57,7 @@ const StyledCharacterIcon = styled(Component).attrs(props => ({
     background: url('./resources/ff7/img/portraits.png') no-repeat 0px 0px / ${CSSSpritesheetWidth()} ${CSSSpritesheetHeight()};
     background-position: ${props => CharacterSpritesheet[props.character].backgroundPosition};
     transform: scaleX(0.9);
+    margin-right: 10px;
 `;
 
 export default StyledCharacterIcon

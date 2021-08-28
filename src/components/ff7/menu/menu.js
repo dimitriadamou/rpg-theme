@@ -23,7 +23,7 @@ const StyledMenu = styled(Menu).attrs(props => ({
     width: props.width || "100%",
     height: props.height || "100%",
 }))`
-    border: 1px solid #727272;
+    border: ${props => props.theme.background.border};
     box-shadow: ${props => props.theme.background.boxShadow};
     border-radius: 4px;
     padding: 5px;
@@ -39,3 +39,5 @@ const StyledMenu = styled(Menu).attrs(props => ({
 `;
 
 export default StyledMenu
+
+export {StyledMenu as Menu}

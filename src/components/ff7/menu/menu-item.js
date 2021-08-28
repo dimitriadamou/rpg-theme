@@ -15,21 +15,22 @@ const StyledMenu = styled(MenuItem)`
     padding-left: 10px;
     &:hover {
         cursor: pointer;
-        padding-left: 20px;
         &:before {
             display: inline-block;
             position: absolute;
-            margin-left: -45px;
+            margin-left: -55px;
             background-image: url("resources/ff7/img/cursor.png");
-            background-size: auto 17px;
+            background-size: 40px 30px;
             background-repeat: no-repeat;
             background-position: center 5px;
             background-origin: content-box;
             content: " ";
             width: 40px;
-            height: 30px;
+            height: 50px;
         }
     }
 `;
 
 export default StyledMenu
+
+export { StyledMenu as MenuItem }

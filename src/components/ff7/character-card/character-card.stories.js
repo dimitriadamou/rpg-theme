@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { BarsGroup, CharacterCard, CharacterIcon, StatsGroup, Stats } from './index';
-import Menu from '../menu/menu';
+import { CharacterMenu } from '../menu';
 
 const component = {
   title: 'ff7/Character Card',
@@ -10,86 +10,58 @@ const component = {
 
 export default component;
 
-const Template = (args) => <CharacterCard />;
 
-export const Primary = Template.bind({});
-Primary.args = {
-};
+const characters = [
+  {
+    icon: "cloud",
+    name: "Cloud",
+    level: "15",
+    maxHP: "500",
+    currentHP: "300",
+    maxMP: "100",
+    currentMP: "100"
+  },
+  {
+    icon: "barret",
+    name: "Barret",
+    level: "15",
+    maxHP: "500",
+    currentHP: "300",
+    maxMP: "50",
+    currentMP: "100"
+  },
+  {
+    icon: "tifa",
+    name: "Tifa",
+    level: "15",
+    maxHP: "500",
+    currentHP: "300",
+    maxMP: "25",
+    currentMP: "100"
+  }
+]
 
-const WithMenu = (args) => <Menu width="600px">
-    <div style={{padding: "20px 30px 40px 30px", 	display: "flex",
-      	alignContent: "center",
-      	flexWrap: "nowrap",
-      	flexDirection: "column",
-      	justifyContent: "center",
-      	alignItems: "left",
-        gridGap: "20px"}}>
-      <CharacterCard>
-        <CharacterIcon character="cloud" alt="title" />
-        <BarsGroup>
-          <div>
-            bar a
-          </div>
-          <div>
-            bar a
-          </div>
-        </BarsGroup>
-        <StatsGroup> 
-          <Stats 
-            name="Cloud"
-            level="15"
-            maxHP="548"
-            currentHP="400"
-            maxMP="121"
-            currentMP="121"
-          />
-        </StatsGroup>
-      </CharacterCard>
-      <CharacterCard>
-        <CharacterIcon character="barret" alt="title" />
-        <BarsGroup>
-          <div>
-            bar a
-          </div>
-          <div>
-            bar a
-          </div>
-        </BarsGroup>
-        <StatsGroup> 
-          <Stats 
-            name="Barret"
-            level="15"
-            maxHP="548"
-            currentHP="400"
-            maxMP="121"
-            currentMP="121"
-          />
-        </StatsGroup>
-      </CharacterCard>
-      <CharacterCard>
-        <CharacterIcon character="sephiroth" alt="title" />
-        <BarsGroup>
-          <div>
-            bar a
-          </div>
-          <div>
-            bar a
-          </div>
-        </BarsGroup>
-        <StatsGroup> 
-          <Stats 
-            name="Sephiroth"
-            level="15"
-            maxHP="548"
-            currentHP="400"
-            maxMP="121"
-            currentMP="121"
-          />
-        </StatsGroup>
-      </CharacterCard>
-    </div>
-  </Menu>;
+const WithMenu = (args) => <CharacterMenu width='600px'>
+  {characters.map(
+    (character) => <CharacterCard key={character.name}>
+      <CharacterIcon character={character.icon} alt={character.icon} />
+      <BarsGroup>
+      </BarsGroup>
+      <StatsGroup> 
+      <Stats 
+        name={character.name}
+        level={character.level}
+        maxHP={character.maxHP}
+        currentHP={character.currentHP}
+        maxMP={character.maxMP}
+        currentMP={character.currentMP}
+      />
+    </StatsGroup>
+
+    </CharacterCard>
+  )}
+</CharacterMenu>;
 
 export const CardWithMenu = WithMenu.bind({});
-Primary.args = {
+CardWithMenu.args = {
 };

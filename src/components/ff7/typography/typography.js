@@ -23,18 +23,32 @@ const getPropSize = (size) => {
     return typeof propSizeMap[size] === "undefined" ? size : propSizeMap[size];
 }
 
+const getTransformScale = (props) => {
+    let defaultX = '1';
+    let defaultY = '1.4';
+
+    if(props.stretchX) defaultX = props.stretchX;
+    if(props.stretchY) defaultY = props.stretchY;
+
+    return `transform: scale(${defaultX}, ${defaultY});`;
+}
+
 const StyledComponent = styled(Component).attrs(
-    props => ({
-        stretch: props.stretch ? "" : "transform: scale(1, 1.4);",
+    (props) => ({
+        stretch:  getTransformScale(props),
         size: props.size ? getPropSize(props.size) : "1.5rem",
-        color: props.theme.background.primaryColor
+        weight: props.bold ? "font-weight: bold;" : '',
+        spacing: props.spacing ? `letter-spacing: ${props.spacing}`: '',
+        color: props.theme.variants.color[props.color] || props.color || props.theme.background.primaryColor
     })
 )`
     font-size: ${props => props.size};
     display: inline-block;
-    font-color: ${props => props.color};
+    color: ${props => props.color};
     line-height: 2rem;
     ${props => props.stretch}
+    ${props => props.weight}
+    ${props => props.spacing}
 `;
 
 export default StyledComponent;
