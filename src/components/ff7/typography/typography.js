@@ -37,6 +37,7 @@ const StyledComponent = styled(Component).attrs(
     (props) => ({
         stretch:  getTransformScale(props),
         size: props.size ? getPropSize(props.size) : "1.5rem",
+        lineHeight: props.lineHeight ? props.lineHeight : "2rem",
         weight: props.bold ? "font-weight: bold;" : '',
         spacing: props.spacing ? `letter-spacing: ${props.spacing}`: '',
         color: props.theme.variants.color[props.color] || props.color || props.theme.background.primaryColor
@@ -45,7 +46,7 @@ const StyledComponent = styled(Component).attrs(
     font-size: ${props => props.size};
     display: inline-block;
     color: ${props => props.color};
-    line-height: 2rem;
+    line-height: ${props => props.lineHeight};
     ${props => props.stretch}
     ${props => props.weight}
     ${props => props.spacing}

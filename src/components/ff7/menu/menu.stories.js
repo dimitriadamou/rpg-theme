@@ -1,11 +1,9 @@
 import React from 'react';
 
-
 import { Menu, NavigationMenu, MenuItem, CharacterMenu} from './index';
-
 import { BarsGroup, CharacterCard, CharacterIcon, StatsGroup, Stats } from '../character-card';
-import Grid from '../layout/grid';
 
+import Grid from '../layout/grid';
 import Typography from '../typography/typography';
 
 const component = {
@@ -21,7 +19,7 @@ const characters = [
     name: "Cloud",
     level: "15",
     maxHP: "500",
-    currentHP: "300",
+    currentHP: "500",
     maxMP: "100",
     currentMP: "100"
   },
@@ -31,7 +29,7 @@ const characters = [
     row: "back",
     level: "15",
     maxHP: "500",
-    currentHP: "300",
+    currentHP: "400",
     maxMP: "100",
     currentMP: "50"
   },
@@ -57,6 +55,9 @@ const MultipleBoxes = (args) => <>
           (character) => <CharacterCard key={character.name}>
               <CharacterIcon row={character.row} character={character.icon} alt={character.icon} />
               <BarsGroup>
+                <div style={{width: "75px"}}>
+
+                </div>
               </BarsGroup>
               <StatsGroup> 
               <Stats 
@@ -86,7 +87,6 @@ const MultipleBoxes = (args) => <>
       <MenuItem>Quit</MenuItem>
     </NavigationMenu>
   </div>
-
   <div style={{position: 'absolute', width: "160px", top: "408px", left: "480px"}}>
     <Menu>
       <Grid>
@@ -115,7 +115,6 @@ const MultipleBoxes = (args) => <>
     </Menu>
   </div>
 </>
-
 
 export const CharacterPage = MultipleBoxes.bind({});
 CharacterPage.args = {

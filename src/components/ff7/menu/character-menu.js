@@ -23,7 +23,7 @@ function Character({className, children, ...props}) {
 
 
 const StyledCharacterMenu = styled(Character)`
-    padding: 20px 25px 20px 25px;
+    padding: 20px 80px 20px 25px;
     display: flex;
     align-content: center;
     flex-wrap: nowrap;
