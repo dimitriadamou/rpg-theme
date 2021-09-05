@@ -54,7 +54,7 @@ const StyledCharacterIcon = styled(Component).attrs(props => ({
 }))`
     width: ${CSSSpriteWidth()};
     height: ${CSSSpriteHeight()};
-    background: url('./resources/ff7/img/portraits.png') no-repeat 0px 0px / ${CSSSpritesheetWidth()} ${CSSSpritesheetHeight()};
+    background: url('/resources/ff7/img/portraits.png') no-repeat 0px 0px / ${CSSSpritesheetWidth()} ${CSSSpritesheetHeight()};
     background-position: ${props => CharacterSpritesheet[props.character].backgroundPosition};
     transform: scaleX(0.9);
     margin-right: 10px;

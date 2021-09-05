@@ -19,7 +19,7 @@ const StyledMenu = styled(MenuItem)`
             display: inline-block;
             position: absolute;
             margin-left: -55px;
-            background-image: url("resources/ff7/img/cursor.png");
+            background-image: url("/resources/ff7/img/cursor.png");
             background-size: 40px 30px;
             background-repeat: no-repeat;
             background-position: center 5px;

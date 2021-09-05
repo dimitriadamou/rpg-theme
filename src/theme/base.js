@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-const globalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
 
 `;
 
@@ -12,7 +12,7 @@ const boxShadowBuilder = (px, color, unit = "px") => [
 ].join(", ");
 
 const theme = {
-    globalStyle,
+    GlobalStyle,
     variants: {
         color: {
             special: "#00e6e7"
@@ -36,6 +36,6 @@ const theme = {
     }
 }
 
-export { globalStyle }
+export { GlobalStyle }
 
 export default theme;

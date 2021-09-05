@@ -13,7 +13,7 @@ addDecorator(withThemes(ThemeProvider, [ff7Theme]));
 export const decorators = [
   (Story) => (
     <>
-      <ff7Theme.globalStyle />
+      <ff7Theme.GlobalStyle />
       <Story />
     </>
   )

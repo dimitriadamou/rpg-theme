@@ -12,14 +12,14 @@ function Character({className, children, ...props}) {
     )
 }
 
-    /*
-    border-width: ${props => props.theme.background.borderWidth};
-    border-style: solid;
-    border-image: ${props => props.theme.background.borderHorizontalBackground};
-    border-image-repeat: stretch;
-    border-left: none;
-    border-right: none;
-    */
+/*
+border-width: ${props => props.theme.background.borderWidth};
+border-style: solid;
+border-image: ${props => props.theme.background.borderHorizontalBackground};
+border-image-repeat: stretch;
+border-left: none;
+border-right: none;
+*/
 
 
 const StyledCharacterMenu = styled(Character)`

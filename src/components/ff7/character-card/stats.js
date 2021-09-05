@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Typography from '../typography/typography';
 import ColourBar from '../progress-bar/colour-bar';
-import Grid from '../layout/grid';
 /*
           name="cloud"
           level="15"
@@ -81,7 +80,7 @@ const Component = ({className, name, level, maxHP, currentHP, maxMP, currentMP})
                         </Typography>
                     </GridText>
                 </TextBar>
-                <GridBar style={{gridRow: "2 / 2", marginTop: "-7px"}}>
+                <GridBar style={{gridRow: "2 / 2", marginTop: "-3px"}}>
                     <ColourBar 
                         barColor="#007dff"
                         value={currentHP}
@@ -103,7 +102,7 @@ const Component = ({className, name, level, maxHP, currentHP, maxMP, currentMP})
                             {currentMP}/ {maxMP}
                         </Typography>
                     </GridText>
-                    <GridBar style={{gridRow: "2 / 2", marginTop: "-7px"}}>
+                    <GridBar style={{gridRow: "2 / 2", marginTop: "-3px"}}>
                         <ColourBar 
                             barColor="#00ff7b"
                             value={currentMP}

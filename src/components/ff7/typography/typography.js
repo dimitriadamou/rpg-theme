@@ -14,7 +14,7 @@ const Component = ({as="span", children, style, className, ...props}) => {
 
 const propSizeMap = {
     "small": "1rem",
-    "normal": "2rem",
+    "normal": "1.5rem",
     "large": "3rem",
     "extra-large": "4rem"
 };
@@ -37,7 +37,7 @@ const StyledComponent = styled(Component).attrs(
     (props) => ({
         stretch:  getTransformScale(props),
         size: props.size ? getPropSize(props.size) : "1.5rem",
-        lineHeight: props.lineHeight ? props.lineHeight : "2rem",
+        lineHeight: props.lineHeight ? getPropSize(props.lineHeight) : "1.5rem",
         weight: props.bold ? "font-weight: bold;" : '',
         spacing: props.spacing ? `letter-spacing: ${props.spacing}`: '',
         color: props.theme.variants.color[props.color] || props.color || props.theme.background.primaryColor
@@ -53,3 +53,6 @@ const StyledComponent = styled(Component).attrs(
 `;
 
 export default StyledComponent;
+export { 
+    StyledComponent as Typography
+}

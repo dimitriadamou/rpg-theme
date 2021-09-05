@@ -3,8 +3,10 @@ import styled from 'styled-components';
 
 function Menu({className, children, ...props}) {
     return (
-        <div className={className}>
-            {children}
+        <div style={{}}>
+            <div className={className}>
+                {children}
+            </div>
         </div>
     )
 }
@@ -34,8 +36,6 @@ const StyledMenu = styled(Menu).attrs(props => ({
     font-family: Verdana, sans-serif;
     font-size: 20px;
     font-weight: normal;
-  
-
 `;
 
 export default StyledMenu
