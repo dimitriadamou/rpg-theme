@@ -2,10 +2,30 @@ import { useEffect, useState } from 'react';
 import { motion } from "framer-motion"
 
 import { useHistory } from 'react-router-dom';
+import styled from 'styled-components';
+
+
 
 import { Menu, MenuItem, CharacterMenu, CharacterCard, CharacterIcon, 
         BarsGroup, StatsGroup, Stats, 
         NavigationMenu, Grid, Typography } from '../../components/ff7';
+
+const MenuDiv = motion(styled.div`
+    position: absolute;
+    width: "25%";
+    top: 200vh;
+    left: 90%;
+    opacity: 0;
+
+    @media (max-width: 768px) {
+        ${NavigationMenu} {
+            flex-direction: row;
+            font-size: 0.75rem;
+        }
+
+        left: 0px;
+    }
+`);
 
 const characters = [
     {
@@ -134,11 +154,10 @@ const MenuCard = ({animate = "open", onAnimationComplete}) => {
         >
             <CharacterSection />
         </motion.div>
-        <motion.div 
-            style={{position: 'absolute', width: "25%", top: "200vh", left: "90%", opacity: 0}}
+        <MenuDiv
             variants={{
                 open: {
-                    top: "-20px",
+                    top: "-58px",
                     opacity: 1
                 },
                 close: {
@@ -151,7 +170,7 @@ const MenuCard = ({animate = "open", onAnimationComplete}) => {
             transition={{ ease: "easeOut", duration: DURATION }}
         >
             <MenuSection />
-        </motion.div>
+        </MenuDiv>
         <motion.div 
             style={{position: 'absolute', width: "25%", top: "80%", left: "-200vw", opacity: 0}}
             transition={{ ease: "easeOut", duration: DURATION}}

@@ -22,6 +22,7 @@ const StyledNavigationMenu = styled(NavigationMenu)`
     justify-content: center;
     align-items: left;
     gap: 2px;
+    cursor: poiner;
 `;
 
 export default StyledNavigationMenu
